@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+  font-size: 0;
+}
+.header img {
+    width: 100%;
+    font-size: 1rem; 
+    display: inline-block;
+    
+}
+.intro{
+  background-color: #eadded;
+  height: 70vh;
+  
+
+}
+.intro h1{
+  padding-top: 30vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+.intro h2{
+  padding-top: 5vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 200;
+}
+.homevid{
+  background-color: #ebf2ff;
+  height: 70vh;
+
+}
+.placeholder{
+  background-color: #ebffeb;
+  height: 70vh;
+
+}
+
+.navbar{
+    -webkit-text-size-adjust: 100%;
+    pointer-events: auto;
+    font-size: 14px;
+    letter-spacing: .02em;
+    line-height: 1.8em;
+    text-transform: none;
+    color: rgba(29,29,29,.7);
+    font-family: montserrat,sans-serif;
+    font-weight: 300 !important;
+    font-style: normal;
+    background: #fff;
+    -webkit-font-smoothing: subpixel-antialiased;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    display: block;
+
+}
+nav{
+    -webkit-text-size-adjust: 100%;
+    pointer-events: auto;
+    font-size: 14px;
+    letter-spacing: .02em;
+    line-height: 1.8em;
+    text-transform: none;
+    color: rgba(29,29,29,.7);
+    font-family: montserrat,sans-serif;
+    font-weight: 300 !important;
+    font-style: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-left: 38px;
+    padding-right: 38px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: garamond, 'Times New Roman', serif;
+    transition: 0.3s;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+
+
+/*change opacity of rest that are not hovered*/
+ul:hover li:not(:hover) a { 
+    opacity: .5;
+}
+  
+
+  /* Hide the link that should open and close the nav.navbar on small screens */
+.navbar .icon, .navbar .signature {
+    display: none;
+  }
+  /*stile the habuger menu*/
+  .navbar a.icon {
+    font-size: 30px;
+    color: #000;
+    
+  }
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the nav.navbar (.icon) */
+@media screen and (max-width: 930px) {
+    .navbar nav ul li {
+        display: none;
+    }
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+    .navbar a.signature {
+        display: block;
+    }
+    .navbar nav ul {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .navbar nav ul a.icon {
+        position: absolute;
+        right: 5vw;
+        top: 20px;
+    }
+  }
+  
+  /* change navigation bar to mobile nav bar */
+  @media screen and (max-width: 930px){
+    .navbar{
+      height: 70px;
+    }
+  }
+  /* The "responsive" class is added to the nav.navbar with JavaScript when the user clicks on the icon. This class makes the nav.navbar look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 930px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responsive nav ul a.icon {
+      position: absolute;
+      right: 5vw;
+      top: 20px;
+    }
+    .navbar.responsive nav ul li {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  .overlay ul li {
+    list-style: none;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .overlay ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 40px;
+    font-weight: 200;
+    font-family: garamond, 'Times New Roman', serif;
+    transition: 0.3s;
+  }
+
+  .overlay ul {
+    margin-top: 15vh;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay #box {
+  background-color: pink;
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 100px;
+  min-height: 100px;
+  width: 10vw;
+  height: 10vw;
+  text-align: center;
+}
+
+.overlay #box a {
+  font-size: 500%;
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  font-family: sans-serif;
+}
