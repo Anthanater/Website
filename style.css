@@ -8,6 +8,7 @@
 .header img {
     width: 100%;
     font-size: 1rem; 
+    
     display: inline-block;
     
 }
@@ -136,6 +137,9 @@ ul:hover li:not(:hover) a {
     }
     .navbar a.signature {
         display: block;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .navbar nav ul {
         display: inline-block;
