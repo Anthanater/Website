@@ -4,40 +4,72 @@
 }
 .header{
   font-size: 0;
+  
 }
 .header img {
     width: 100%;
     font-size: 1rem; 
-    
     display: inline-block;
     
 }
 .intro{
   background-color: #eadded;
   height: 70vh;
-  
 
 }
 .intro h1{
-  padding-top: 30vh;
+  padding-top: 10vh;
   padding-left: 15vw;
   padding-right: 15vw;
   text-align: center;
-  font-size: 30px;
+  font-size: 70px;
   font-weight: 200;
 }
 .intro h2{
   padding-top: 5vh;
   padding-left: 15vw;
   padding-right: 15vw;
+  margin-bottom: 10px;
   text-align: center;
-  font-size: 17px;
+  font-size: 30px;
+  font-weight: 200;
+}
+.intro p{
+  padding-top: 3vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  text-align: center;
+  font-size: 20px;
   font-weight: 200;
 }
 .homevid{
   background-color: #ebf2ff;
-  height: 70vh;
+  height: 100vh;
 
+}
+.homevid h2{
+  padding-top: 5vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-bottom: 5vh;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+.homevidcontainer{
+    overflow:hidden;
+    margin:auto;
+    padding-bottom:35%;
+    position:relative;
+    height:auto;
+    width: 50%;
+}
+.homevidcontainer iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
 }
 .placeholder{
   background-color: #ebffeb;
@@ -152,11 +184,44 @@ ul:hover li:not(:hover) a {
         top: 20px;
     }
   }
-  
+  /*for super small mobile view*/
+  @media screen and (max-width: 480px) {
+    .homevid{
+      background-color: #ebf2ff;
+      height: 60vh;
+    }
+  }
   /* change navigation bar to mobile nav bar */
   @media screen and (max-width: 930px){
     .navbar{
       height: 70px;
+    }
+    .header img{
+      padding-top: 50px;
+    }
+    .homevid h2{
+      padding-top: 5vh;
+      padding-left: 15vw;
+      padding-right: 15vw;
+      padding-bottom: 5vh;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 200;
+    }
+    .homevidcontainer{
+        overflow:hidden;
+        margin:auto;
+        padding-bottom:70%;
+        position:relative;
+        height:auto;
+        width: 70%;
+    }
+    .homevidcontainer iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
     }
   }
   /* The "responsive" class is added to the nav.navbar with JavaScript when the user clicks on the icon. This class makes the nav.navbar look good on small screens (display the links vertically instead of horizontally) */
