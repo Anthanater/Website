@@ -200,7 +200,7 @@ ul:hover li:not(:hover) a {
     }
     .intro-icons{
       text-align: center;
-      padding-top: 5vh;
+      padding-top: 4vh;
     }
     .intro h1{
       padding-top: 6vh;
@@ -304,4 +304,40 @@ ul:hover li:not(:hover) a {
   color: black;
   margin: 0;
   font-family: sans-serif;
+}
+/*this is for big monitors or screens*/
+@media screen and (min-width: 1580px){
+  .intro h1{
+    padding-top: 10vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    text-align: center;
+    font-size: 110px;
+    font-weight: 200;
+  }
+  .intro h2{
+    padding-top: 5vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 200;
+  }
+  .intro p{
+    padding-top: 3vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 200;
+  }
+  .in{
+    height: 81;
+    width: auto;
+  }
+  .yt{
+    height: 81.8;
+    width: auto;
+  }
 }
