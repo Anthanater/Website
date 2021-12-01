@@ -421,6 +421,6 @@ ul:hover li:not(:hover) a {
     width: auto;
   }
   nav ul{
-    padding-top: 2vh;
+    padding-top: 1vh;
   }
 }
