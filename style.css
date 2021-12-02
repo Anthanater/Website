@@ -167,7 +167,7 @@
   font-weight: 200;
   font-family: garamond, 'Times New Roman', serif;
   padding-top: 3vh;
-  font-size: 35px;
+  font-size: 25px;
 }
 .intro-icons-footer{
   text-align: center;
@@ -189,7 +189,7 @@
   text-align: center;
 }
 .bottomFooter{
-  font-size: 19px;
+  font-size: 17px;
 }
 .navbar{
     -webkit-text-size-adjust: 100%;
@@ -451,5 +451,15 @@ ul:hover li:not(:hover) a {
   }
   nav ul{
     padding-top: 1vh;
+  }
+  .topFooter h2{
+    text-align: center;
+    font-weight: 200;
+    font-family: garamond, 'Times New Roman', serif;
+    padding-top: 3vh;
+    font-size: 45px;
+  }
+  .bottomFooter{
+    font-size: 19px;
   }
 }
