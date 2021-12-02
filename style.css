@@ -162,6 +162,35 @@
   background-color: #ffe6e9;
   height: 35vh;
 }
+.topFooter h2{
+  text-align: center;
+  font-weight: 200;
+  font-family: garamond, 'Times New Roman', serif;
+  padding-top: 3vh;
+  font-size: 25px;
+}
+.intro-icons-footer{
+  text-align: center;
+  padding-top: 3vh;
+}
+.footerCon{
+  padding-top: 3vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+.footerLine{
+  overflow: hidden;
+  width:68vw;
+  height: 2px;
+  background-color: gray;
+}
+.bottomFooter{
+  padding-top: 4vh;
+  text-align: center;
+}
+.bottomFooter{
+  font-size: 17px;
+}
 .navbar{
     -webkit-text-size-adjust: 100%;
     pointer-events: auto;
