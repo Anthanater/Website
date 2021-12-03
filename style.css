@@ -89,7 +89,7 @@
   text-decoration: none;
 }
 .homevidcontainer{
-  margin-top: -31vh;
+  margin-top: -28vh;
     overflow:hidden;
     margin-left: 55vw;
     padding-bottom:35%;
@@ -329,7 +329,7 @@ ul:hover li:not(:hover) a {
   @media screen and (max-width: 480px) {
     .homevid{
       background-color: #ebf2ff;
-      height: 60vh;
+      height: 2px;
     }
     .intro-icons{
       text-align: center;
@@ -495,5 +495,14 @@ ul:hover li:not(:hover) a {
   }
   .bottomFooter{
     font-size: 19px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .homevid{
+    background-color: #ebf2ff;
+    height: 60vh;
+  }
+  .projects{
+    height: 80vh;
   }
 }
