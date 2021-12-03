@@ -46,37 +46,63 @@
   text-align: center;
   padding-top: 6vh;
 }
-/*.yt and .in are problem childs right now*/
+
 .in{
   padding-right: 30px;
 }
 .homevid{
   background-color: #ebf2ff;
-  height: 100vh;
+  height: 75vh;
 
 }
 .homevid h2{
-  padding-top: 5vh;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-top: 20vh;
+  padding-right: 45vw;
   padding-bottom: 5vh;
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 200;
 }
+.vidBtnCon{
+  padding-top: 1vh;
+  padding-left: 15.7vw;
+}
+.vidBtn {
+  -webkit-border-radius: 52;
+  -moz-border-radius: 52;
+  border-radius: 52px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  background: #ffe6e9;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  
+}
+
+.vidBtn:hover {
+  background: #fff0f2;
+  text-decoration: none;
+}
 .homevidcontainer{
+  margin-top: -31vh;
     overflow:hidden;
-    margin:auto;
+    margin-left: 55vw;
     padding-bottom:35%;
     position:relative;
     height:auto;
-    width: 50%;
+    width: 30%;
     z-index: 5;
 }
+
 .homevidcontainer iframe{
   left:0;
   top:0;
-  height:100%;
+  height:80%;
   width:100%;
   position: absolute;
   z-index: 5;
@@ -84,16 +110,15 @@
 .projects{
   background-color: #fffef2;
   height: 95vh;
-  
 
 }
 .projects h1{
   text-align: center;
-  padding-top: 5vh;
+  padding-top: 6vh;
   font-weight: 200;
 }
 .pContainer{
-  padding-top: 10vh;
+  padding-top: 8vh;
   padding-left: 8vw;
   padding-right: 8vw;
 }
@@ -322,6 +347,11 @@ ul:hover li:not(:hover) a {
     .header img{
       padding-top: 50px;
     }
+    .homevid{
+      background-color: #ebf2ff;
+      height: 100vh;
+    
+    }
     .homevid h2{
       padding-top: 5vh;
       padding-left: 15vw;
@@ -346,8 +376,12 @@ ul:hover li:not(:hover) a {
       width:100%;
       position:absolute;
     }
+    
     .intro h1{
       padding-top: 6vh;
+    }
+    .vidBtn {
+      display: none;
     }
   }
   /* The "responsive" class is added to the nav.navbar with JavaScript when the user clicks on the icon. This class makes the nav.navbar look good on small screens (display the links vertically instead of horizontally) */
