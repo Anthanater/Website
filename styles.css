@@ -1,0 +1,1016 @@
+/*
+ * IT Anthony Website Styles
+ * Mobile-first, accessible, warm design
+ *
+ * Color palette and typography are defined as CSS custom properties
+ * for easy customization later.
+ */
+
+/* ========================================
+   CSS Custom Properties (Variables)
+   ======================================== */
+:root {
+    /* Colors - Warm, approachable palette */
+    --color-primary: #3b82a0;        /* Soft blue - main accent */
+    --color-primary-dark: #2d6880;   /* Darker blue for hover states */
+    --color-primary-light: #e8f4f8;  /* Very light blue for backgrounds */
+
+    --color-text: #2d3748;           /* Dark gray - main text */
+    --color-text-light: #4a5568;     /* Lighter gray - secondary text */
+    --color-text-muted: #718096;     /* Muted gray - captions */
+
+    --color-bg: #fdfcfb;             /* Warm off-white background */
+    --color-bg-alt: #f7f5f3;         /* Slightly darker warm background */
+    --color-white: #ffffff;
+
+    --color-border: #e2ddd8;         /* Warm gray border */
+    --color-shadow: rgba(45, 55, 72, 0.1);
+
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-size-base: 18px;
+    --font-size-sm: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 40px;
+
+    --line-height: 1.7;
+    --line-height-tight: 1.3;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 64px;
+    --spacing-2xl: 96px;
+
+    /* Layout */
+    --max-width: 1200px;
+    --header-height: 80px;
+
+    /* Touch targets (44px minimum) */
+    --touch-target: 48px;
+
+    /* Border radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: var(--font-size-2xl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: var(--font-size-lg);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: flex;
+}
+
+.icon {
+    flex-shrink: 0;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    min-height: var(--touch-target);
+    padding: 14px 28px;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ========================================
+   Header / Navigation
+   ======================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-sm);
+    min-height: var(--header-height);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-link {
+    text-decoration: none;
+}
+
+.brand-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.tagline {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    display: none;
+}
+
+.header-phone {
+    display: none;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 500;
+    color: var(--color-primary);
+    min-height: var(--touch-target);
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.header-phone:hover {
+    color: var(--color-primary-dark);
+}
+
+.main-nav {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target);
+    padding: var(--spacing-xs);
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Mobile phone button */
+.mobile-phone-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease;
+}
+
+.mobile-phone-btn:hover {
+    background-color: var(--color-primary-light);
+}
+
+/* Hamburger menu toggle */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--touch-target);
+    height: var(--touch-target);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background-color: var(--color-bg-alt);
+}
+
+.menu-toggle .close-icon {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon {
+    display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .close-icon {
+    display: block;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+    display: none;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-sm);
+}
+
+.mobile-nav[aria-hidden="false"] {
+    display: block;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    min-height: var(--touch-target);
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-text);
+}
+
+.mobile-nav-phone {
+    color: var(--color-primary);
+    margin-top: var(--spacing-xs);
+    background-color: var(--color-primary-light);
+}
+
+.mobile-nav-phone:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+/* ========================================
+   Computer Repair Section (Primary Service)
+   ======================================== */
+.computer-repair {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg-alt);
+}
+
+.computer-repair h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--color-text-light);
+}
+
+.repair-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.repair-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    text-align: center;
+}
+
+.repair-icon {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.repair-card h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+.repair-card p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+}
+
+.repair-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+.repair-cta a {
+    font-weight: 600;
+}
+
+/* ========================================
+   Services Section
+   ======================================== */
+.services {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.services-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.service-icon {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.service-card p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   Pricing Section
+   ======================================== */
+.pricing {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
+}
+
+.pricing h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.pricing-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.pricing-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
+    transition: border-color 0.2s ease;
+}
+
+.pricing-card:hover {
+    border-color: var(--color-primary);
+}
+
+.pricing-card.featured {
+    border-color: var(--color-primary);
+    position: relative;
+}
+
+.pricing-card.featured::before {
+    content: "Popular";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.pricing-header {
+    text-align: center;
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-header h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.price {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.price span {
+    font-size: var(--font-size-base);
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.pricing-features {
+    margin-bottom: var(--spacing-sm);
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.check-icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pricing-note {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    text-align: center;
+    font-style: italic;
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========================================
+   Why Go Local Section
+   ======================================== */
+.why-local {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-primary-light);
+}
+
+.why-local h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefits-grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.benefit {
+    text-align: center;
+    padding: var(--spacing-sm);
+}
+
+.benefit-icon {
+    color: var(--color-primary);
+    margin: 0 auto var(--spacing-sm);
+}
+
+.benefit h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+.benefit p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   FAQ Section
+   ======================================== */
+.faq {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg);
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--touch-target);
+    padding: var(--spacing-sm) 0;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    font-weight: 300;
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-answer {
+    padding-bottom: var(--spacing-sm);
+}
+
+.faq-answer p {
+    color: var(--color-text-light);
+}
+
+/* ========================================
+   Service Area Section
+   ======================================== */
+.service-area {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg-alt);
+    text-align: center;
+}
+
+.service-area h2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-area p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-area .area-list {
+    font-size: var(--font-size-base);
+    margin-top: var(--spacing-sm);
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+.site-footer {
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.footer-content {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+}
+
+.footer-contact {
+    text-align: center;
+}
+
+.footer-contact h3 {
+    color: var(--color-bg);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    color: var(--color-bg);
+    min-height: var(--touch-target);
+    transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.8;
+    color: var(--color-bg);
+}
+
+.service-area-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+/* ========================================
+   Desktop Styles (768px and up)
+   ======================================== */
+@media (min-width: 768px) {
+    :root {
+        --header-height: 90px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .desktop-only {
+        display: flex;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+
+    /* Header */
+    .header-container {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .tagline {
+        display: block;
+    }
+
+    .header-phone {
+        display: flex;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    /* Hero */
+    .hero {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero-cta {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    /* Computer Repair */
+    .computer-repair {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .repair-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .repair-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Services */
+    .services {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Pricing */
+    .pricing {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+    }
+
+    .pricing-card {
+        padding: var(--spacing-lg);
+    }
+
+    .pricing-card.featured {
+        transform: scale(1.02);
+    }
+
+    /* Why Local */
+    .why-local {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* FAQ */
+    .faq {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: var(--spacing-2xl) 0 var(--spacing-lg);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .footer-brand,
+    .footer-contact {
+        text-align: left;
+    }
+
+    .contact-list {
+        align-items: flex-start;
+    }
+
+    .contact-link {
+        justify-content: flex-start;
+    }
+
+    .service-area-footer {
+        justify-content: flex-start;
+    }
+}
+
+/* ========================================
+   Large Desktop Styles (1024px and up)
+   ======================================== */
+@media (min-width: 1024px) {
+    /* Computer Repair */
+    .repair-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Why Local */
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .benefit {
+        padding: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   Focus Styles (Accessibility)
+   ======================================== */
+a:focus,
+button:focus,
+summary:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+summary:focus:not(:focus-visible) {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

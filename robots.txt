@@ -1,0 +1,6 @@
+# robots.txt for itanthony.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://itanthony.com/sitemap.xml
